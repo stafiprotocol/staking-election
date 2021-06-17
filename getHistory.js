@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-06-15 10:29:42
- * @LastEditTime: 2021-06-16 10:54:20
+ * @LastEditTime: 2021-06-16 14:52:00
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /posStrategy/main.js
@@ -12,28 +12,6 @@ const { ApiPromise, WsProvider } = require('@polkadot/api')
 const { isHex } = require('@polkadot/util')
 
 let DOT_DECIMAL_PLACES = 10000000000;
-let lowest = "no one";
-let lowestNonZeroValidator = "no one";
-let highest = "no one";
-let highestAmount = NaN;
-let lowestAmount = NaN;
-let lowestNonZeroAmount = NaN;
-let highestCommission = "no one";
-let lowestCommission = "no one";
-let highestCommissionAmount = NaN;
-let lowestCommissionAmount = NaN;
-let network = 'polkadot'; // default to polkadot network (can be changed to kusama using command line arg)
-let highestMinAmount = NaN;
-let highestMinNominator = "no one";
-let highestMinAmountNon100 = NaN; // Tracks highest min nomination for non 100% commission validators
-let highestMinNominatorNon100 = "no one";
-let countNon100 = 0; // Number of non 100% commission validators
-let averageMinNomination = NaN; // Average minimum nomination across all validators
-let averageMinNominationNon100 = NaN; // Average minimum nomination for non 100% commission validators
-let lowestMinStake = NaN;
-// let lowestNonZeroMinNominator = "no one";
-// let lowestNonZeroMinStake = NaN;
-let lowestMinNominator = "no one";
 
 (async () => {
     console.log('Connecting to Polkadot')
